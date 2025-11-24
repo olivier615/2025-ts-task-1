@@ -236,7 +236,7 @@ type TUpdateProduct = Partial<Omit<TProduct, 'id' | 'title'>> & {
 create → "新增商品成功：${product.title}"
 update → "更新商品成功：${product.id}"
 */
-export const submitProduct = (type: 'create' | 'update', product: TCreateProduct | TUpdateProduct): string => {
+export const submitProduct = (type: 'create' | 'update', product: TCreateProduct | TUpdateProduct) => {
   if (type === 'create') {
     return `新增商品成功：${(product as TCreateProduct).title}`; 
   } else if (type === 'update') {
